@@ -1,0 +1,24 @@
+0. 此为视频直播系统部署脚本, 基于python2.7实现, 须在 redhat 系列Linux上使用
+
+1. 安装
+    ./INSTALL.py
+
+安装目录分别为:
+NGINX: /usr/local/nginx/
+PHP: /usr/local/php/
+WEB根目录: /data/web/
+
+注: 程序需要使用1935(rtmp)和8080(http)端口,注意防火墙的控制
+
+2. 运行
+    ./bin 目录下为服务控制脚本.
+        ./start_server.sh    开启服务
+        ./stop_server.sh     关闭服务
+        ./restart_server.sh  重启服务
+    进程均以www用户运行.
+
+3. 文件修改
+    1) 编辑 /data/web/player/const.php 文件, 修改第二行的 SERVERIP 变量, 改为正确的ip地址
+
+4. 安装python2.7
+    如果系统没有python2.7, 请运行 python2.7 目录下的INSTALL脚本.

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $UID -ne 0 ]; then
+	echo "root privilege required, please use SUDO"
+	exit
+fi
+
+tar -jxf Python-2.7.tar.bz2
+cd Python-2.7 && ./configure && make && make install
+cd .. && python2.7 get-pip.py
